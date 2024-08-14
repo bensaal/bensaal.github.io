@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Content Box</title>
+    <link rel="stylesheet" href="../components/index.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card">
+            <img src="../pic.jpg" alt="Ben" style="width:100%">
+            <h1>Ben Saalberg, B.A.</h1>
+            <p class="title">Software Engineer</p>
+            <p class="title">Applying for PhD's</p>
+            <p>Maxar Technologies</p>
+            <p>Kalamazoo College</p>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <p><button onclick="window.location.href='mailto:your-email@example.com';">Contact</button></p>
+        </div>
+        
+        <div class="text-box">
+            <div class="tabs">
+                <button class="tab-link active" onclick="openTab(event, 'AboutMe')">About Me</button>
+                <button class="tab-link" onclick="openTab(event, 'Academics')">Academics and Skills</button>
+            </div>
+            <div id="AboutMe" class="tab-content active-content">
+                <h2>About Me</h2>
+                <p> 
+                    I graduated from Kalamazoo College in June of 2024 with my Bachelor of Arts in Computer Science.
+                    <br>
+                    <br>
+                    Since March 2023, I've been a Software Engineer at Maxar Technologies, where I've had the opportunity 
+                    to take on a variety of roles. From building a full-stack satellite image viewing application to parallelizing 
+                    that very application and updating legacy Java code, I've gained invaluable experience. Each project has expanded 
+                    my skill set, and for that, I'm grateful.
+                    <br>
+                    <br>
+                    In collaboration with Maxar Technologies and Kalamazoo College, under the guidance of Dr. Sandino Vargas-Pérez, 
+                    I conducted research focused on software engineering techniques, with a particular emphasis on parallelization in 
+                    server-loading large satellite images. I'm honored that this project earned me the distinction of Honors.
+                    <br>
+                    <br>
+                    Recently, my interests have shifted toward computer science and computing education, prompting me to delve deeper 
+                    into these areas while continuing to refine my skills in other technical domains. This is all part of my preparation
+                     to apply to PhD programs, where I hope to explore CS education from a social perspective and investigate how topics 
+                     at the intersection of Green Computing can enhance the human condition.
+                </p>
+            </div>
+            <div id="Academics" class="tab-content">
+                <h2>Academics</h2>
+                <div class="academics-container">
+                    <div class="academics-box">
+                        <h3>Research Papers</h3>
+                        <ul>
+                            <li>"Engineering and Parallelizing Synthetic Aperature Radar (SAR) Image Environment Viewing Engineer
+                                (SIEVE)"" - Kalamazoo College, Honors
+                            </li>
+                            <!-- Add more papers here -->
+                        </ul>
+                    </div>
+                    <div class="academics-box">
+                        <h3>Skills</h3>
+                        <ul>
+                            <li>Programming Languages: Java, Python, C++</li>
+                            <li>Web Development: HTML, CSS, JavaScript</li>
+                            <li>Frameworks: React, Vue, SvelteKit</li>
+                            <li>Typesetting: LaTeX, Markdown</li>
+                            <!-- Add more skills here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+            // Hide all tab contents
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active-content");
+            }
+
+            // Remove the "active" class from all tab links
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Show the current tab and add an "active" class to the button that opened it
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active-content");
+            evt.currentTarget.classList.add("active");
+        }
+
+        let headerInfo = `
+<header>
+<div>
+  <ul class="nav-links">
+    <li><a href="../src/index.html">About</a></li>
+    <li><a href="../SaalbergBenCV.pdf">Curriculum Vitae</a></li>
+  </ul>
+</div>
+</header>
+`
+
+/* Adds headerInfo infromation to header, and adds to each page via script
+by inserting using .innerHTML */
+const body = document.getElementsByTagName("BODY")[0];
+const header = document.createElement("header");
+header.id = "header";
+const headerItem = (header.innerHTML += headerInfo);
+body.insertBefore(header, body.firstChild);
+    </script>
+</body>
+</html>
