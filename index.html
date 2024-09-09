@@ -13,14 +13,14 @@
         <li><a href="https://read.cv/bensaalberg">CV</a></li>
       </ul>
     </div>
-    </header>
+</header>
 <body>
     
     <div class="container">
         <div class="card">
             <img src="../pic.jpg" alt="Ben" style="width:100%">
             <h1>Ben Saalberg</h1>
-            <p class="title">Software Engineer</p>
+            <p class="title">Software Engineer, Designer</p>
             <p>Maxar Technologies</p>
             <p>Kalamazoo College</p>
             <a href="#"><i class="fa fa-dribbble"></i></a>
@@ -35,7 +35,7 @@
                 <button class="tab-link active" onclick="openTab(event, 'AboutMe')">About Me</button>
                 <button class="tab-link" onclick="openTab(event, 'Academics')">Projects and Skills</button>
             </div>
-            <div id="AboutMe" class="tab-content active-content">
+            <div id="AboutMe" class="tab-content active-content" style="display: block;">
                 <h2>About Me</h2>
                 <p> 
                     Since March 2023, I've been working as a Software Engineer at Maxar Technologies, taking on a variety of roles that have significantly broadened my skill set. From building a full-stack satellite image viewing application to parallelizing it and updating legacy Java code, each project has provided invaluable experience, for which I'm grateful.
@@ -47,25 +47,22 @@
                     Looking ahead, I'm passionate about contributing to projects that enhance the betterment of the human condition, particularly through education, sustainability, and equality. If you're interested in collaborating on technical solutions to these pressing issues, I’d love to connect on technical problems as they relate to these issues, please do not hesitate to reach out.
                 </p>
             </div>
-            <div id="Academics" class="tab-content">
-                <h2>Academics</h2>
+            <div id="Academics" class="tab-content" style="display: none;">
+                <h2>Projects and Skills</h2>
                 <div class="academics-container">
                     <div class="academics-box">
                         <h3>Projects</h3>
                         <ul>
-                            <li><a href="https://github.com/bensaal/daily-ai-crossword">"Daily AI Generating Crossword Puzzle"</href>
-                            </li>
-                            <!-- Add more papers here -->
+                            <li><a href="https://github.com/bensaal/daily-ai-crossword">"Daily AI Generating Crossword Puzzle"</a></li>
                         </ul>
                     </div>
                     <div class="academics-box">
                         <h3>Skills</h3>
                         <ul>
-                            <li>Programming Languages: Java, Python, C++</li>
-                            <li>Web Development: HTML, CSS, JavaScript</li>
-                            <li>Frameworks: React, Vue, SvelteKit</li>
+                            <li>Development: HTML, CSS, JavaScript, Svelte</li>
+                            <li>Tools: Figma</li>
+                            <li>Frameworks: React, SvelteKit</li>
                             <li>Typesetting: LaTeX, Markdown</li>
-                            <!-- Add more skills here -->
                         </ul>
                     </div>
                 </div>
@@ -75,23 +72,25 @@
     
     <script>
         function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
+            var i, tabContent, tabLinks;
 
             // Hide all tab contents
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                tabcontent[i].classList.remove("active-content");
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+                tabContent[i].classList.remove("active-content");
             }
 
             // Remove the "active" class from all tab links
-            tablinks = document.getElementsByClassName("tab-link");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
+            tabLinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
             }
 
             // Show the current tab and add an "active" class to the button that opened it
             document.getElementById(tabName).style.display = "block";
-            document.getElementById(tabName).classList.add("active-content");
             evt.currentTarget.classList.add("active");
         }
+    </script>
+</body>
+</html>
