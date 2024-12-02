@@ -4,65 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben Saalberg's Page</title>
+    <!-- Updated font to Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../components/index.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
-<header>
-    <div>
-      <ul class="nav-links">
-        <li><a href="C:\Users\be033130\Documents\GitHub\bensaal.github.io\index.htmll">About</a></li>
-        <li><a href="https://read.cv/bensaalberg">CV</a></li>
-      </ul>
-    </div>
-</header>
 <body>
-    
+    <!-- Simplified Navbar -->
+    <div class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">About</a></li>
+            <li><a href="https://read.cv/bensaalberg">CV</a></li>
+        </ul>
+    </div>
+
     <div class="container">
-        <div class="card">
-            <img src="../pic.jpg" alt="Ben" style="width:100%">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <img src="../pic.jpg" alt="Ben" class="profile-image">
             <h1>Ben Saalberg</h1>
-            <p class="title">Software Engineer</p>
-            <p>Maxar Technologies</p>
-            <p>Kalamazoo College</p>
-            <a href="#"><i class="fa fa-dribbble"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <p><button onclick="window.location.href='mailto:your-email@example.com';">Contact</button></p>
+            <p class="title">Software Engineer, Machine Learning</p>
+            <p>ARKA</p>
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://github.com/bensaal"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/bensaalberg/"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <!-- Contact Button -->
+            <button onclick="window.location.href='mailto:bsaalberg@gmail.com';">Contact</button>
         </div>
-        
-        <div class="text-box">
+
+        <!-- Content Section -->
+        <div class="content-section">
             <div class="tabs">
                 <button class="tab-link active" onclick="openTab(event, 'AboutMe')">About Me</button>
                 <button class="tab-link" onclick="openTab(event, 'Academics')">Projects and Skills</button>
             </div>
-            <div id="AboutMe" class="tab-content active-content" style="display: block;">
+            <div id="AboutMe" class="tab-content active-content">
                 <h2>About Me</h2>
                 <p> 
-                    Since March 2023, I've been working as a Software Engineer at Maxar Technologies, taking on a variety of roles that have significantly broadened my skill set. From building a full-stack satellite image viewing application to parallelizing it and updating legacy Java code, each project has provided invaluable experience, for which I'm grateful.
-                    <br>
-                    <br>
+                    <!-- About Me Content -->
+                    Since May 2022, I've worked in the software industry, where I've engineered, developed, and designed a wide range of technologies. Wearing many hats has been invaluable, helping me learn essential tools for my roles. From Java and Python to Docker and Git, each has driven my growth immensely.
+                    <br><br>
                     I earned my Bachelor of Arts in Computer Science from Kalamazoo College, where I was fortunate to explore a wide range of disciplines beyond my major. The diverse coursework and involvement in various groups have left a lasting impact on me, shaping who I am today. My time at Kalamazoo is something I’ll always look back on with fondness.
-                    <br>
-                    <br>
-                    Looking ahead, I'm passionate about contributing to projects that enhance the betterment of the human condition, particularly through education, sustainability, and equality. If you're interested in collaborating on technical solutions to these pressing issues, I’d love to connect on technical problems as they relate to these issues, please do not hesitate to reach out.
+                    <br><br>
+                    Looking ahead, I'm passionate about contributing to projects that enhance the betterment of the human condition, particularly through education, sustainability, and equality. If you're interested in collaborating on technical solutions to these pressing issues, please do not hesitate to reach out.
                 </p>
             </div>
-            <div id="Academics" class="tab-content" style="display: none;">
-                <h2>Projects and Skills</h2>
+            <div id="Academics" class="tab-content">
+                <h2>Research, Projects, and Skills</h2>
                 <div class="academics-container">
                     <div class="academics-box">
-                        <h3>Projects</h3>
+                        <h3>Research and Projects</h3>
                         <ul>
-                            <li><a href="https://github.com/bensaal/daily-ai-crossword">"Daily AI Generating Crossword Puzzle"</a></li>
+                            <li><a href="SaalbergWaterInfML.pdf">Engineering a Multi-Label Classifier for Damaged Water Infrastructure Systems (Paper)</a></li>
+                            <li><a href="https://colab.research.google.com/drive/1gWVe7ZnCYdp9pCZQ0IUH8wyzqwxX864j?usp=sharing">Engineering a Multi-Label Classifier for Damaged Water Infrastructure Systems (Model)</a></li>
+                            <li><a href="https://colab.research.google.com/drive/1BEsIs2KLtQqezUufcZ9PHkiBm_Gw2ltj?usp=sharing.pdf">Rock, Paper, Scissors Classifier</a></li>
+                            <li><a href="SaalbergSIPFDcopy.pdf">Engineering and Parallelizing a Satellite Image Analysis Engine</a></li>
+                            <!-- Add more projects as needed -->
                         </ul>
                     </div>
                     <div class="academics-box">
                         <h3>Skills</h3>
                         <ul>
-                            <li>Development: HTML, CSS, JavaScript, Svelte</li>
-                            <li>Tools: Figma, Git, Docker</li>
-                            <li>Frameworks: React, SvelteKit</li>
+                            <li>Development: Python, Java, JavaScript, HTML, CSS</li>
+                            <li>Tools: Git, Docker</li>
+                            <li>Frameworks: React, Vue</li>
                             <li>Typesetting: LaTeX, Markdown</li>
+                            <!-- Add more skills as needed -->
                         </ul>
                     </div>
                 </div>
@@ -70,6 +80,7 @@
         </div>
     </div>
     
+    <!-- Tab Functionality Script -->
     <script>
         function openTab(evt, tabName) {
             var i, tabContent, tabLinks;
@@ -91,6 +102,11 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.classList.add("active");
         }
+
+        // Initialize the first tab
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementsByClassName('tab-link')[0].click();
+        });
     </script>
 </body>
 </html>
